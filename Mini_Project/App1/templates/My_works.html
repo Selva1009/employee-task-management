@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Task</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            max-width: 900px; /* Ensures table does not stretch too much on wide screens */
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #e74c3c; /* Red background for headers */
+            color: white;
+        }
+
+        td {
+            background-color: #f8d7da; /* Light red for the table cells */
+        }
+
+        tr:hover {
+            background-color: #f1c4c2; /* Slightly darker red for hover effect */
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+                padding: 10px;
+            }
+
+            th,
+            td {
+                padding: 10px;
+            }
+
+            th {
+                font-size: 16px;
+            }
+
+            td {
+                font-size: 14px;
+            }
+        }
+
+        /* Further responsiveness for very small devices */
+        @media (max-width: 480px) {
+            th,
+            td {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            table {
+                font-size: 14px;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Task No</th>
+                <th>Name</th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.Employees.Name }}</td>
+                <td>{{ i.Task }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
